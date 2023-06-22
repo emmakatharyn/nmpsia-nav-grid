@@ -1,0 +1,203 @@
+/* Example CSS styling for the navbar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #555;
+  /* I don't want the links to collapse to the next line */
+  white-space: nowrap;
+}
+
+header {
+  position: relative;
+}
+
+/* NAVIGATION GRID STYLES (DESKTOP) */
+
+.navbar {
+  width: 100%;
+  display: grid;
+  background-color: #f0effc;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr 48px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.brand-div,
+.nav-link-list.top {
+  height: 100%;
+  background-color: #fff;
+}
+
+.brand-div {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: flex-start;
+}
+
+.logo-image {
+  max-width: 150px; /* Adjust the max-width as needed */
+}
+
+.nav-link-list {
+  height: 36px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-link-list a:link,
+.nav-link-list a:visited {
+  padding: 12px 6px;
+}
+
+.nav-link-list a:hover,
+.nav-link-list a:active {
+  background-color: #3383fa;
+  color: #fff;
+}
+
+.nav-link-list.bottom.left {
+  justify-self: flex-start;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+.search-icon {
+  height: 24px;
+  width: 24px;
+}
+
+.search-input {
+  display: none;
+}
+
+.show {
+  display: inline-block;
+}
+
+/* mobile nav */
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 48px;
+  width: 48px;
+  color: #333;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+/* Media Queries for Small Desktop/Tablet Responsiveness */
+@media (max-width: 1100px) {
+  .nav-link-list a:link,
+  .nav-link-list a:visited,
+  .nav-link-list .nav-link:link,
+  .nav-link-list .nav-link:visited {
+    font-size: 12px;
+  }
+
+  .nav-link-list.top a:link,
+  .nav-link-list.top a:visited {
+    font-size: 14px;
+  }
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 860px) {
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  .navbar {
+    height: 100vh;
+    background-color: #f0effce0;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    /* padding: 6px 6px 0; */
+    gap: 24px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .nav-link-list {
+    height: fit-content;
+    flex-direction: column;
+    gap: 24px;
+
+    /* display: none; */
+    transform: translateX(1000%);
+    transition: all 0.9s ease-in;
+  }
+
+  .open .nav-link-list {
+    /* display: flex; */
+    transform: translateX(0);
+    transition: all 0.7s ease;
+  }
+
+  .open .brand-div {
+    background-color: #f0effce0;
+  }
+
+  .open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+  .open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+  .nav-link-list.bottom.left {
+    justify-self: center;
+  }
+
+  .nav-link-list.top {
+    background-color: #f0effc;
+  }
+
+  .nav-link-list a:link,
+  .nav-link-list a:visited,
+  .nav-link-list .nav-link:link,
+  .nav-link-list .nav-link:visited {
+    font-size: 18px;
+  }
+
+  .nav-link-list.top a:link,
+  .nav-link-list.top a:visited {
+    font-size: 16px;
+  }
+
+  .nav-link-list .nav-link:link,
+  .nav-link-list .nav-link:visited {
+    padding: 0;
+  }
+}
