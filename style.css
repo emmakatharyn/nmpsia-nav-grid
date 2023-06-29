@@ -166,6 +166,10 @@ header {
     transition: all 0.7s ease;
   }
 
+  .open .nav-link-list.bottom.left {
+    grid-row-start: 4;
+  }
+
   .open .brand-div {
     background-color: #f0effce0;
   }
