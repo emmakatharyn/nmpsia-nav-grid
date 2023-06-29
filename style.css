@@ -138,12 +138,13 @@ header {
   }
 
   .navbar {
-    height: 100vh;
+    height: 1000px;
     background-color: #f0effce0;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     /* padding: 6px 6px 0; */
-    gap: 24px;
+    /* gap: 24px; */
+    gap: 0;
 
     position: absolute;
     top: 0;
@@ -153,6 +154,7 @@ header {
   .nav-link-list {
     height: fit-content;
     flex-direction: column;
+    justify-content: flex-start;
     gap: 24px;
 
     /* display: none; */
@@ -191,17 +193,10 @@ header {
   .nav-link-list a:link,
   .nav-link-list a:visited,
   .nav-link-list .nav-link:link,
-  .nav-link-list .nav-link:visited {
-    font-size: 18px;
-  }
-
+  .nav-link-list .nav-link:visited,
   .nav-link-list.top a:link,
   .nav-link-list.top a:visited {
-    font-size: 16px;
-  }
-
-  .nav-link-list .nav-link:link,
-  .nav-link-list .nav-link:visited {
-    padding: 0;
+    font-size: 24px;
+    padding: 12px 36px;
   }
 }
