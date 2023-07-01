@@ -16,6 +16,8 @@ a:visited {
   color: #555;
   /* I don't want the links to collapse to the next line */
   white-space: nowrap;
+
+  padding: 4px 2px;
 }
 
 header {
@@ -66,13 +68,18 @@ header {
 
 .nav-link-list a:link,
 .nav-link-list a:visited {
-  padding: 12px 6px;
+  padding: 14px 8px 16px;
 }
 
 .nav-link-list a:hover,
 .nav-link-list a:active {
   background-color: #3383fa;
   color: #fff;
+}
+
+.nav-link-list a.dropdown-toggle:link,
+.nav-link-list a.dropdown-toggle:visited {
+  padding: 12px 6px;
 }
 
 .nav-link-list.bottom.left {
@@ -166,6 +173,7 @@ header {
     /* display: flex; */
     transform: translateX(0);
     transition: all 0.7s ease;
+    width: 100vw;
   }
 
   .open .nav-link-list.bottom.left {
